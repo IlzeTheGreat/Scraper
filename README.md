@@ -2,7 +2,7 @@
 ***
 
 ## Task
-To create a web data scraper.
+To create a web data scraper that will request, extract, transform and format data.
 
 ## Description
 Let's scrape data and return a CSV of the TOP 25 trending repositories from Github.
@@ -17,5 +17,3 @@ Created locally, enjoyed internationally!
 Ilze Rosicka
 Raivis Ogorodovs
 
-<span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
-<span><img alt='Qwasar SV -- Software Engineering School's Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px' /></span>
