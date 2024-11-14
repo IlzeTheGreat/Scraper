@@ -2,22 +2,20 @@
 ***
 
 ## Task
-TODO - What is the problem? And where is the challenge?
+To create a web data scraper.
 
 ## Description
-TODO - How have you solved the problem?
+Let's scrape data and return a CSV of the TOP 25 trending repositories from Github.
 
 ## Installation
-TODO - How to install your project? npm install? make? make re?
+No installation needed.
 
 ## Usage
-TODO - How does it work?
-```
-./my_project argument1 argument2
-```
+Created locally, enjoyed internationally!
 
 ### The Core Team
-
+Ilze Rosicka
+Raivis Ogorodovs
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
 <span><img alt='Qwasar SV -- Software Engineering School's Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px' /></span>
