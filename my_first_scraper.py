@@ -1,12 +1,18 @@
 import requests
-#import BeautifulSoup4
 
-url = "https://github.com/trending"
+def request_github_trending(url):
 
-response = requests.get(url)
+    response = requests.get(url)
 
-if response.status_code == 200: #check if successful
-    html_content = response.text #get the content
-    print(html_content)  
-else:
-    print(f"Can't access. Status code: {response.status_code}")
+    if response.status_code == 200:  #Check if success
+        html_content = response.text  #Get the content
+        return html_content
+    else:
+        print(f"Can't access. Error code: {response.status_code}")
+        return None
+
+#Testing
+html_content = request_github_trending("https://github.com/trending")
+if html_content:
+    print("Got content successfully!")
+    print(html_content[:500])  #Print first 500 characters
