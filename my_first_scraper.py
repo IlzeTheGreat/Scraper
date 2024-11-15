@@ -27,19 +27,38 @@ def extract(page):
     all_rows = soup.find_all('article', class_='Box-row')
     return all_rows
 
-# Testējam abas funkcijas
+# Testing both functions
+
 url = "https://github.com/trending"
 page_content = request_github_trending(url)
 
-#Testing
-"""
 if page_content:
     all_rows = extract(page_content)
     print(f"Found {len(all_rows)} repositories:")
-    for i, repo in enumerate(all_rows[:5], start=1):
+    for i, repo in enumerate(all_rows[:1], start=1):
         print(f"\nRepository {i}:\n", repo.prettify())
-"""
+
 
 #Write a function prototyped: def transform(html_repos) taking an array of all the instances of HTML code of the repository row.
 #It will return an array of hash following this format: [{'developer': NAME, 'repository_name': REPOS_NAME, 'nbr_stars': NBR_STARS}, ...]
 
+def transform(html_repos):
+    result = []
+    soup = BeautifulSoup(str(repo), 'html.parser')
+
+    h2_element = soup.find('h2', class_='h3 lh-condensed')
+    a_element = h2_element.find('a')
+    href = a_element['href']
+
+    developer = href.split
+
+    repository_name =
+
+    nbr_stars =
+
+
+
+
+#Part 3: Format
+#Write a function prototyped: def format(repositories_data) taking a repository array of hash and transforming it and returning it into a CSV string. Each column will be separated by , and each line by \n
+#The columns will be Developer,Repository Name,Number of Stars
