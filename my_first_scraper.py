@@ -38,7 +38,6 @@ if page_content:
     for i, repo in enumerate(all_rows[:1], start=1):
         print(f"\nRepository {i}:\n", repo.prettify())
 
-
 #Write a function prototyped: def transform(html_repos) taking an array of all the instances of HTML code of the repository row.
 #It will return an array of hash following this format: [{'developer': NAME, 'repository_name': REPOS_NAME, 'nbr_stars': NBR_STARS}, ...]
 
@@ -49,14 +48,27 @@ def transform(html_repos):
     h2_element = soup.find('h2', class_='h3 lh-condensed')
     a_element = h2_element.find('a')
     href = a_element['href']
+    developer = href.split('/')[1] #because developer name is the index 1 in that line
+    repository_name = href.split('/')[2]
 
-    developer = href.split
+    stars = soup.find('a', href =lambda x: x and x.endswith('/stargazers'))
+    nbr_stars = int(stars.text.strip().replace(',', '')) if stars else 0
 
-    repository_name =
+    result.append({
+        'developer': developer,
+        'repository_name': repository_name,
+        'nbr_stars': nbr_stars
+    })
 
-    nbr_stars =
+    return result
 
-
+#Testing
+html_content = request_github_trending("https://github.com/trending")
+if html_content:
+    repo_rows = extract(html_content)
+    structured_data = transform(repo_rows)
+    for repo in structured_data:
+        print(repo)
 
 
 #Part 3: Format
